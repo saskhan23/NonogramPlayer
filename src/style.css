@@ -1,0 +1,91 @@
+.root {
+  border-color: black;
+  empty-color: #f4f4f4;
+  filled-color: #325288;
+  marked-color: firebrick;
+  hover-color: red;
+  unsolved-background-color: empty-color;
+  unsolved-text-color: border-color;
+  solved-background-color: #114E60;
+  solved-text-color: white;
+}
+
+.nonogram-view {
+  -fx-background-color: unsolved-background-color;
+  -fx-border-color: border-color;
+  -fx-border-width: 1 1 1 1;
+}
+
+.nonogram-view-solved {
+  -fx-background-color: solved-background-color;
+}
+
+/* Clue styling ------------------------------------------------------------- */
+
+.row-clues-view {}
+.col-clues-view {}
+.row-clue-view {}
+.col-clue-view {}
+
+.clue-view > Text {
+  -fx-font-family: sans-serif;
+  -fx-stroke-width: 0;
+}
+
+.clue-view-unsolved > Rectangle {
+  -fx-fill: unsolved-background-color;
+}
+
+.clue-view-unsolved > Text {
+  -fx-fill: unsolved-text-color;
+}
+
+.clue-view-solved > Rectangle {
+  -fx-fill: solved-background-color;
+}
+
+.clue-view-solved > Text {
+  -fx-fill: solved-text-color;
+}
+
+/* Cell styling ------------------------------------------------------------- */
+
+.cell-grid-view {
+  -fx-border-color: border-color;
+  -fx-border-width: 1 0 0 1;
+}
+
+.cell-view > Rectangle {
+  -fx-stroke: border-color;
+  -fx-stroke-type: inside;
+  -fx-stroke-width: 1;
+}
+
+.cell-view:hover > Rectangle {
+  -fx-stroke: hover-color;
+  -fx-stroke-width: 2;
+}
+
+.cell-view > Line {
+  visibility: hidden;
+  -fx-stroke: marked-color;
+  -fx-stroke-width: 2;
+  -fx-stroke-line-cap: round;
+  -fx-stroke-type: outside;
+}
+
+.cell-view-empty > Rectangle {
+  -fx-fill: empty-color;
+}
+
+.cell-view-filled > Rectangle {
+  -fx-fill: filled-color;
+}
+
+.cell-view-marked > Rectangle {
+  -fx-fill: empty-color;
+}
+
+.cell-view-marked > Line {
+  visibility: visible;
+}
